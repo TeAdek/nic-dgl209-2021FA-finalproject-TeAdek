@@ -4,21 +4,23 @@ import data from "./data";
 
 function HomePage() {
   return (
-    <div className="row">
+    <div >
+        <ul className="row">
        { data.products.map((products) => (
-         <div key={products.id} className="card-body">
+         <li key={products.id} className="card-body">
             <div className="image-box"><a href={`/product/${products.id}`}>
              <img src={products.images} alt={products.productName} className="card-images"/>
-           </a></div>
+          <span className="add-to-cart"><p>Add To Cart</p></span> </a></div>
            
           <h3>{products.productName}</h3>
           <p>{products.description}</p>
           <div className="price">${products.price}</div>
-          </div>
+          
+          </li>
          )
 
          )
-}
+}</ul>
     </div>
  
   );
