@@ -27,6 +27,55 @@ const data = {
       images: "/images/cherry-clover-heart-mitten-1024x680_1024x1024.jpg.webp",
     },
   ],
+
+  collection: [
+    {
+      id: 1,
+      categoryName: "Gifts",
+      images:"/images/collections/gift-box-Easter-out.jpg.webp",
+    },
+
+    {
+      id: 2,
+      categoryName: "Bars",
+      images:"/images/collections/Old-school-Dark-and-Milk_1024x1024.jpg.webp",
+    },
+    {
+      id: 3,
+      categoryName: "Truffles",
+      images:"/images/collections/truffle-layout-template-spark-of-joy-post-Mother_s-Days.jpg.webp",
+    },
+    {
+      id: 4,
+      categoryName: "Cookies",
+      images:"/images/collections/baci-dallassio-white-background_1024x1024.jpg.webp",
+    },
+    {
+      id: 5,
+      categoryName: "Tree Parts, Spreads, etc",
+      images:"/images/collections/bark-2019.jpg.webp",
+    },
+    {
+      id: 6,
+      categoryName: "Drinking Chocolate",
+      images:"/images/collections/Hot-Chocolate-Malted-75g_1024x1024.jpg.webp",
+    },
+    {
+      id: 7,
+      categoryName: "Tumbles",
+      images:"/images/collections/macnuts_grande.jpg.webp",
+    },
+    {
+      id: 8,
+      categoryName: "Gelato",
+      images:"/images/collections/gelato-blueberry-violet_large.jpg.webp",
+    },
+    {
+      id: 9,
+      categoryName: "Toffee",
+      images:"/images/collections/English-Toffee3_large.jpg.webp",
+    },
+  ],
   };
 
   export default data;

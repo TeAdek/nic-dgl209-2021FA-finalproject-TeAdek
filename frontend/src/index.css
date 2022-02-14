@@ -12,14 +12,31 @@ code {
     monospace;
 }
 
+.headings{
+  text-align: center;
+  font-size: 2rem;
+  color: rebeccapurple;
+}
+
+.text{
+  font-size: 0.8rem;
+  text-align: center;
+  color: #eb423d;
+}
+
+li{
+  list-style: none;
+  
+}
+a{
+  text-decoration: none;
+}
 /*Home Page Product*/
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 0.8rem;
-  text-align: center;
-  color: #eb423d;
+
 }
 
 .price {
@@ -35,7 +52,6 @@ code {
   overflow: hidden;
   margin: auto;
   position: relative;
-  border: solid green;
   object-fit: cover;
   transition: all 0.6s;
 }
@@ -64,4 +80,17 @@ code {
 
 .image-box:hover .add-to-cart {
   opacity: 1;
+}
+
+/*Home Page Category*/
+.collections-row{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  
+}
+
+.collection-images{
+  width: 100%;
 }
