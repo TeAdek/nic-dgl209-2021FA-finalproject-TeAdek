@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/*Home Page Product*/
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +31,19 @@ code {
   width: 30%;
 }
 
-.card-images{
-width: 80%;
+.image-box{
+  border: solid #eb423d;
+  width: 200px;
+  height: 120px;
+  overflow: hidden;
 }
 
+.card-images{
+width: 80%;
+transition: transform .8s;
+}
+
+.card-images:hover{
+
+transform: scale(1.4);
+}

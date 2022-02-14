@@ -7,9 +7,10 @@ function HomePage() {
     <div className="row">
        { data.products.map((products) => (
          <div key={products.id} className="card-body">
-           <a href={`/product/${products.id}`}>
+            <div className="image-box"><a href={`/product/${products.id}`}>
              <img src={products.images} alt={products.productName} className="card-images"/>
-           </a>
+           </a></div>
+           
           <h3>{products.productName}</h3>
           <p>{products.description}</p>
           <div className="price">${products.price}</div>
