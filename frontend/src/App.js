@@ -10,7 +10,7 @@ function App() {
     <NavBar />
     <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="/dashboard" element={<Product />} />
+    <Route path="/product/:id" element={<Product />} />
     </Routes>
   </BrowserRouter>
   );
