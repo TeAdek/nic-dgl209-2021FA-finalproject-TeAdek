@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
@@ -13,34 +12,33 @@ code {
     monospace;
 }
 
-.title-headings{
+.title-headings {
   text-align: center;
   font-size: 2rem;
   color: rebeccapurple;
 }
 
-.text{
+.text {
   font-size: 0.8rem;
   text-align: center;
   color: #eb423d;
 }
 
-.headings{
+.headings {
   text-transform: uppercase;
+  font-size: 1rem;
 }
 
-li{
+li {
   list-style: none;
-  
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-
 /*Home Page Product*/
-.home-page{
+.home-page {
   border: rgb(161, 21, 108) solid;
   width: 80%;
   margin: auto;
@@ -49,9 +47,8 @@ a{
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-
+  justify-content: space-evenly;
+  padding: 0;
 }
 
 .price {
@@ -98,36 +95,44 @@ a{
 }
 
 /*Home Page Category*/
-.collections-row{
+.collections-row {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
- 
-  
+  padding: 0;
 }
 
-.collection-images{
+.collection-images {
   width: 100%;
 }
 
-/*HomePage Location*/
-.location-images{
-  max-width: 500px;
+/*HomePage Store Location*/
+.location-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-.location-box{
+.location-images {
   max-width: 400px;
+}
+
+.location-box {
+  max-width: 300px;
   border: blueviolet solid;
   text-align: center;
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 /*Navigation Bar*/
-nav{
+nav {
   margin: 0;
 }
 
-nav ul{
+nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -135,36 +140,34 @@ nav ul{
   flex-wrap: wrap;
   padding: 10px 0px;
   margin: 0;
-  
 }
 
-nav a{
+nav a {
   color: aliceblue;
 }
 
-nav li{
+nav li {
   margin-left: 20px;
 }
-.sub-menu{
+.sub-menu {
   display: none;
 }
-.menu{
+.menu {
   display: flex;
   justify-content: space-between;
 }
-.menu-icons{
+.menu-icons {
   display: flex;
   justify-content: space-between;
 }
-.logo-nav img{ 
+.logo-nav img {
   background-color: blueviolet;
   width: 100%;
-  }
+}
 
-  .logo-nav {
-    width: 100px;
-    min-height: 45px;
-    object-fit: cover;
-    margin: 0px;
-
-  }
+.logo-nav {
+  width: 100px;
+  min-height: 45px;
+  object-fit: cover;
+  margin: 0px;
+}

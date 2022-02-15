@@ -44,7 +44,7 @@ function HomePage() {
         ))}
       </ul>
       <h2 className="title-headings">Store Locations</h2>
-      <ul className="row">
+      <ul className="location-row">
       {data.locations.map((location) => (
           <li key={location.id} className="location-box">
               <div className="image-box"><a href={`/locations/${location.id}`}>
