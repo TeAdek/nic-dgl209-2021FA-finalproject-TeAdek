@@ -7,6 +7,7 @@ const data = {
       price: 100,
       category: "gifts",
       images: "/images/kinsip-tasting-for-Web_4b3621fa-d8bd-4051-a65b-58ed36af031e_1024x1024.jpg.webp",
+      detail: "Limited Edition WILD AT HEART {large hand-size truffle dark chocolate heart filled with: Hazelnut Chocolate Praline made by smooshing roasted hazelnuts and chocolate until buttery. Wild Amarena Cherries bathed in Amarena syrup until plump and juicy. Amaretti Cookies baked golden. a splash of Boreal Vanilla made by harvesting the tiny flowers of wild sweet clover... beautiful aroma of almonds, honey and Summertime. Cherries, Almonds and chocolate are one of the loveliest trios in the land of desserts. Tangy Amarena cherries from Emilia-Romagna, and just baked, aromatic Amaretti cookies are suspended like gems in a rich buttery chocolate scented with sweet wild clover. Each bite eats like a dream. A celebration of single beautiful moments… a honey hued sunset, a glowing smile, a story... a summertime nap under a fluffy sky... Love is wild and free, impossibly sweet. Fancied up in a pretty box and ready to gift. Origins: Cacao beans: Hacienda Victoria farm, Ecuador, Milk: Ontario, Canada, Hazelnuts: Tonde Gentile delle Langhe IGP, Italy, Wild cherries: Bologna, Italy. Wild sweet clover: Quebec, Canada. approx. 180g. *contains alcohol, wheat, nuts including tree nuts and milk.",
     },
      
     {

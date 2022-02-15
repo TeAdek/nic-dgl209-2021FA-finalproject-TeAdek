@@ -8,7 +8,7 @@ function NavBar() {
       <nav>
         <ul>
           <li className="logo-nav">
-            <a href="">
+            <a href="/">
               <img src="/images/logo.png.webp" />
             </a>
           </li>

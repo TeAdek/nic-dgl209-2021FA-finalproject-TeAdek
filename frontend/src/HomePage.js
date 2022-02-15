@@ -3,7 +3,7 @@ import data from "./data";
 
 function HomePage() {
   return (
-    <div className="home-page">
+    <div className="page-screen">
       <ul className="row text">
         {data.products.map((products) => (
           <li key={products.id} className="card-body">
