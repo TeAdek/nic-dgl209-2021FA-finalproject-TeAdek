@@ -19,6 +19,7 @@ function Product() {
           <h1>{product.productName}</h1>
           <p>{product.description}</p>
           <p>${product.price}</p>
+          <div>{product.countInStock>0? (<span>In Stock</span>):(<span>Unavailable</span>)}</div>
           <div className="add-to-cart-product"> <a href="">Add to Cart</a></div>
         </div>
 
