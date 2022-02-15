@@ -26,7 +26,7 @@ function HomePage() {
           </li>
         ))}
       </ul>
-      <h2 className="headings">Shop Our Collections</h2>
+      <h2 className="title-headings">Shop Our Collections</h2>
       <ul className="collections-row">
         {data.collection.map((collections) => (
           <li key={collections.id}>
@@ -37,11 +37,28 @@ function HomePage() {
                   alt={collections.categoryName}
                   className="collection-images"
                 />
-                <h3 className="text">{collections.categoryName}</h3>
+                <h3 className="text headings">{collections.categoryName}</h3>
               </a>
             </div>
           </li>
         ))}
+      </ul>
+      <h2 className="title-headings">Store Locations</h2>
+      <ul className="row">
+      {data.locations.map((location) => (
+          <li key={location.id} className="location-box">
+              <div className="image-box"><a href={`/locations/${location.id}`}>
+                <img
+                  src={location.images}
+                  alt={location.locationName}
+                     className="location-images"
+                />
+                <h3 className="text headings">{location.locationName}</h3>
+                <p>{location.address}</p>
+                <p>{location.openFor}</p>
+              </a></div>
+          </li>
+      )) }
       </ul>
     </div>
   );

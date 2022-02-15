@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.headings{
+.title-headings{
   text-align: center;
   font-size: 2rem;
   color: rebeccapurple;
@@ -24,10 +24,15 @@ code {
   color: #eb423d;
 }
 
+.headings{
+  text-transform: uppercase;
+}
+
 li{
   list-style: none;
   
 }
+
 a{
   text-decoration: none;
 }
@@ -36,6 +41,7 @@ a{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px;
 
 }
 
@@ -88,9 +94,21 @@ a{
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+ 
   
 }
 
 .collection-images{
   width: 100%;
+}
+
+/*HomePage Location*/
+.location-images{
+  max-width: 500px;
+}
+
+.location-box{
+  max-width: 400px;
+  border: blueviolet solid;
+  text-align: center;
 }

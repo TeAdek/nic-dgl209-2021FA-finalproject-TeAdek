@@ -76,6 +76,32 @@ const data = {
       images:"/images/collections/English-Toffee3_large.jpg.webp",
     },
   ],
+
+  locations: [
+    {
+      id: 1,
+      locationName:"Distillery District",
+      address: "32 Tank House Lane, Toronto, Ontario, Canada, M5A3C4",
+      openFor:"open for in-store shopping: everyday 11-7. Yes especially Valentine's Day",
+      images:"/images/locations/feature_img_distillery-district-location_grande.jpg.webp",
+    },
+    {
+      id: 2,
+      locationName:"King St. West",
+      address:"443 King Street West, Toronto, Ontario, Canada, M5V1K4",
+      openFor:"open for in-store shopping: Tues-Sat 11-6",
+      images:"/images/locations/king-interiorOP_grande.jpg.webp",
+
+    },
+    {
+      id: 3,
+      locationName:"Chocolate Factory",
+      address:"77 Brock Ave Toronto, Ontario M6K 2L3",
+      openFor:"Factory shop open for in-store shopping: Wed-Sat 11-6 Pick up window:  Tue  11am - 4:30pm / Wed-Sat  12pm - 5:30pm",
+      images:"/images/locations/about-us-cacao-bean3-optimized_grande.jpg.webp",
+
+    },
+  ],
   };
 
   export default data;
