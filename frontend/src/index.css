@@ -36,6 +36,8 @@ li{
 a{
   text-decoration: none;
 }
+
+
 /*Home Page Product*/
 .row {
   display: flex;
@@ -112,3 +114,45 @@ a{
   border: blueviolet solid;
   text-align: center;
 }
+
+/*Navigation Bar*/
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: brown;
+  flex-wrap: wrap;
+  padding-left: 0;
+  
+}
+
+nav a{
+  color: aliceblue;
+}
+
+nav li{
+  margin-left: 20px;
+}
+.sub-menu{
+  display: none;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+}
+.menu-icons{
+  display: flex;
+  justify-content: space-between;
+}
+.logo-nav img{ 
+  background-color: blueviolet;
+  width: 100%;
+  }
+
+  .logo-nav {
+    width: 100px;
+    min-height: 45px;
+    object-fit: cover;
+    margin: 0px;
+
+  }

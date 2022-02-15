@@ -1,11 +1,18 @@
 import React from "react";
 import HomePage from "./HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./NavBar";
+import Product from "./Product"
 
 function App() {
   return (
-    <React.Fragment>
-            <HomePage/>
-            </React.Fragment>
+    <BrowserRouter>
+    <NavBar />
+    <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/dashboard" element={<Product />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
