@@ -36,6 +36,12 @@
     },
     "countInStock": {
       "type": "biginteger"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "products"
     }
   }
 }
