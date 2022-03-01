@@ -1,19 +1,29 @@
 import React from "react";
-import HomePage from "./HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
+
+//page & layout imports
 import NavBar from "./NavBar";
 import Product from "./Product";
 import Cart from "./Cart";
+import HomePage from "./HomePage";
+
+//apollo client
+const client = new ApolloClient({
+  uri: 'http://localhost:1337/graphql',
+  cache: new InMemoryCache()
+})
 
 function App() {
   return (
     <BrowserRouter>
-    <NavBar />
+    <ApolloProvider client={client}> <NavBar />
     <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/product/:id" element={<Product />} />
     <Route path="/cart/:id?" element={<Cart/>} />
-    </Routes>
+    </Routes></ApolloProvider>
+   
   </BrowserRouter>
   );
 }
