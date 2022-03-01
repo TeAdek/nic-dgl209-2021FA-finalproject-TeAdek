@@ -1,22 +1,28 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
-import {GET_VALENTINEGIFTS} from "../gqloperation/queries";
+import {GET_VALENTINEGIFTS, GET_COLLECTIONLIST} from "../gqloperation/queries";
 import ValentineCard from "../components/ValentineCard";
 
 function HomePage() {
-  const { loading, error, data } = useQuery(GET_VALENTINEGIFTS, {
+  const valentineGift = useQuery(GET_VALENTINEGIFTS, {
     variables: {collectionId: 10}
   })
+  const collectionList = useQuery(GET_COLLECTIONLIST)
+
+  const errors = valentineGift.error || collectionList.error;
+  const loading = valentineGift.loading || collectionList.loading;
 
   if(loading) return <p>Loading...</p>
-  if(error) return <p>Error :(</p>
+  if(errors) return <p>Error :(</p>
 
-  console.log(data)
+  console.log(valentineGift)
+  console.log(collectionList)
 
   return (
     <div className="page-screen">
-        {data.collection.data.attributes.products.data.map(({id, attributes}) => {
+        <ul>{valentineGift.data.collection.data.attributes.products.data.map(({id, attributes}, key) => {
         return <ValentineCard 
+        key={key}
         id={id}
         name={attributes.name} 
         price={attributes.price} 
@@ -24,27 +30,12 @@ function HomePage() {
         image={attributes.images.data[0].attributes.url}
        /> 
         })
-}
+}</ul>
        
-            
+
+   
       
-      {/* <h2 className="title-headings">Shop Our Collections</h2>
-      <ul className="collections-row">
-        {data.collection.map((collections) => (
-          <li key={collections.id}>
-            <div>
-              <a href={`/collections/${collections.id}`}>
-                <img
-                  src={collections.images}
-                  alt={collections.categoryName}
-                  className="collection-images"
-                />
-                <h3 className="text headings">{collections.categoryName}</h3>
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {/* 
       <h2 className="title-headings">Store Locations</h2>
       <ul className="location-row">
       {data.locations.map((location) => (

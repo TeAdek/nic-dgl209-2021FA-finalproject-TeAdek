@@ -28,3 +28,23 @@ query ValentineCollections($collectionId: ID) {
     }
   }
 }`
+
+
+export const GET_COLLECTIONLIST = gql `query CollectionsList {
+  collections {
+    data {
+      id
+      attributes {
+        categoryName
+        products {
+          data {
+            id
+            attributes {
+              productName
+            }
+          }
+        }
+      }
+    }
+  }
+}`
