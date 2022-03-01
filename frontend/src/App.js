@@ -3,10 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
 
 //page & layout imports
-import NavBar from "./NavBar";
-import Product from "./Product";
-import Cart from "./Cart";
-import HomePage from "./HomePage";
+import HomePage from "./pages/HomePage";
 
 //apollo client
 const client = new ApolloClient({
@@ -17,14 +14,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <BrowserRouter>
-    <ApolloProvider client={client}> <NavBar />
+    <ApolloProvider client={client}> 
+    {/* <NavBar /> */}
     <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="/product/:id" element={<Product />} />
-    <Route path="/cart/:id?" element={<Cart/>} />
+    {/* <Route path="/product/:id" element={<Product />} /> */}
     </Routes></ApolloProvider>
    
-  </BrowserRouter>
+  </BrowserRouter> 
   );
 }
 
