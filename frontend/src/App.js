@@ -4,7 +4,7 @@ import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
 
 //page & layout imports
 import HomePage from "./pages/HomePage";
-
+import ProductDetailPage from "./pages/ProductDetailPage"
 //apollo client
 const client = new ApolloClient({
   uri: 'http://localhost:1337/graphql',
@@ -18,7 +18,7 @@ function App() {
     {/* <NavBar /> */}
     <Routes>
     <Route path="/" element={<HomePage />} />
-    {/* <Route path="/product/:id" element={<Product />} /> */}
+    <Route path="/product/:id" element={<ProductDetailPage/>} />
     </Routes></ApolloProvider>
    
   </BrowserRouter> 

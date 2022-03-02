@@ -44,6 +44,49 @@ export const GET_COLLECTIONLIST = gql `query CollectionsList {
             }
           }
         }
+        categoryImages {
+          data {
+            id
+            attributes {
+              name
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}`
+
+
+export const GET_PRODUCTDETAILS = gql `
+query Product($productId: ID) {
+  product(id: $productId) {
+    data {
+      id
+      attributes {
+        price
+        productName
+        description
+        details
+        images {
+          data {
+            id
+            attributes {
+              name
+              url
+            }
+          }
+        }
+        countInStock
+        collections {
+          data {
+            attributes {
+              categoryName
+            }
+            id
+          }
+        }
       }
     }
   }

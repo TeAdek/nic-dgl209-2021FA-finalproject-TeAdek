@@ -1,5 +1,51 @@
-// import React, {useState} from "react";
-// import { useNavigate, useParams } from "react-router-dom";
+import { useQuery } from '@apollo/client'
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { GET_PRODUCTDETAILS } from '../gqloperation/queries'
+import { BACKEND_URL } from "../helpers";
+
+export default function ProductDetailPage() {
+    const{id} = useParams()
+    const {loading, error, data} = useQuery(GET_PRODUCTDETAILS, {variables:{
+        productId:id
+    }})
+
+    if(loading) return <p>Loading...</p>
+    if(error) return <p>Error :(</p>
+
+    console.log(data)
+    console.log(id)
+
+    const {countInStock, description, detail, images, price, productName} = data.product.data.attributes
+
+  return (
+    <div className="page-screen">
+       <div className="product-row">
+            <div className="product-images">
+              <img src={`${BACKEND_URL + images.data[0].attributes.url}`} alt={productName} />
+            </div>
+            <div className="product-detail">
+              <h1>{productName}</h1>
+              <p>{description}</p>
+              <p>${price}</p>
+              <div>{countInStock>0? (<span>In Stock</span>):(<span>Unavailable</span>)}</div>
+          <div>{countInStock>0 && (
+               <>
+    <button className="add-to-cart-product"> Add to Cart</button></>
+              
+              )}</div>
+          
+            </div>
+
+            <div className="product-description">
+              <h3>Description</h3>
+              <p>{detail}</p>
+            </div>
+          </div>
+        </div>
+      );
+}
+
 
 // function Product(props) {
 //   const navigate = useNavigate();

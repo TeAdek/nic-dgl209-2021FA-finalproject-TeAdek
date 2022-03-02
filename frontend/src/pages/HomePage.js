@@ -32,7 +32,14 @@ function HomePage() {
         })
 }</ul>
        
-
+{/* <ul>
+        {collectionList.data.collection.map(({id, attributes}, key) => (
+          return <CollectionCard
+          id={id}
+          categoryName={attributes.categoryName}
+          image={}/>
+        ))}
+      </ul> */}
    
       
       {/* 

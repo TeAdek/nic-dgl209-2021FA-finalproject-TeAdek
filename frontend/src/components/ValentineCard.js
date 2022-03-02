@@ -1,9 +1,10 @@
 import React from 'react'
 import { BACKEND_URL } from "../helpers";
+import {Link} from 'react-router-dom'
 
 const ValentineCard = ({id, name, price, description, image}) => {
   return (
-    
+    <Link to={`/product/${id}`}>
           <div className="row text">
           <div className="card-body">
             <div className="image-box">
@@ -23,6 +24,7 @@ const ValentineCard = ({id, name, price, description, image}) => {
           </div>
      
       </div>
+      </Link>
     
   )
 }
