@@ -16,7 +16,7 @@ export default function ProductDetailPage() {
     console.log(data)
     console.log(id)
 
-    const {countInStock, description, detail, images, price, productName} = data.product.data.attributes
+    const {countInStock, description, details, images, price, productName} = data.product.data.attributes
 
   return (
     <div className="page-screen">
@@ -39,7 +39,7 @@ export default function ProductDetailPage() {
 
             <div className="product-description">
               <h3>Description</h3>
-              <p>{detail}</p>
+              <p>{details}</p>
             </div>
           </div>
         </div>
