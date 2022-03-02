@@ -1,12 +1,18 @@
 import React from "react";
 import { useQuery} from '@apollo/client'
 import {GET_COLLECTIONLIST} from "../gqloperation/queries"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 import "font-awesome/css/font-awesome.css";
 
 function NavBar() {
+    const navigate = useNavigate()
     const {loading, error, data} = useQuery(GET_COLLECTIONLIST)
+    const jwt = localStorage.getItem('jwt')
+    const logout = () => {
+        localStorage.removeItem('jwt')
+        navigate('/')
+    }
 
     if(loading) return <p>Loading...</p>
     if(error) return <p>Error :(</p>
@@ -44,10 +50,26 @@ function NavBar() {
           </div>
           <div className="menu-icons">
             <li>
+                {
+                    jwt ?
+                    <>
+                    <li onClick={logout}><button>Logout</button></li>
+                    </>
+                    :
+                    <>
+                    <Link to="/login">Login
+              </Link>
+                    </>
+                    
+                }
+              
+            </li>
+            <li>
               <a href="">
                 <i className="fa fa-search" />
               </a>
             </li>
+            
             <li>
               <a href="">
                 <i className="fa fa-shopping-cart" />
