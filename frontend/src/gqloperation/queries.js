@@ -91,3 +91,123 @@ query Product($productId: ID) {
     }
   }
 }`
+
+
+export const GET_PAGEINTRODUCTIONS = gql `
+query Post($postId: ID) {
+  post(id: $postId) {
+    data {
+      id
+      attributes {
+        pages
+        pageImage {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        pageName
+      }
+    }
+  }
+}`
+
+export const GET_LOCATIONS = gql`query Locations {
+  locations {
+    data {
+      id
+      attributes {
+        locationName
+        locationImage {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        address
+        openFor
+      }
+    }
+  }
+}`
+
+export const GET_LOCATIONDETAILS = gql`
+query Location($locationId: ID) {
+  location(id: $locationId) {
+    data {
+      attributes {
+        locationName
+        address
+        openFor
+        locationDescription
+        phoneNumber
+        locationImage {
+          data {
+            id
+            attributes {
+              url
+            }
+          }
+        }
+      }
+      id
+    }
+  }
+}`
+
+export const GET_COLLECTIONPRODUCT = gql `
+query CategoryProducts($collectionId: ID) {
+  collection(id: $collectionId) {
+    data {
+      id
+      attributes {
+        products {
+          data {
+            attributes {
+              productName
+              price
+              description
+              details
+              images {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              countInStock
+             
+            }
+            id
+          }
+        }
+        categoryName
+        categoryImages {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        post {
+          data {
+            id
+            attributes {
+              pages
+              pageName
+              pageImage {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`

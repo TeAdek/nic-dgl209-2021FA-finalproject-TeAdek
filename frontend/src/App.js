@@ -10,8 +10,10 @@ import { Blog } from "./pages/Blog";
 import { OurStory } from "./pages/OurStory";
 import { ShopPage } from "./pages/ShopPage";
 import { StoreLocation } from "./pages/StoreLocation";
+import ProductCategory from "./pages/ProductCategory";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
+import LocationDetails from "./pages/LocationDetails";
 
 //apollo client
 const client = new ApolloClient({
@@ -27,12 +29,14 @@ function App() {
     <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/product/:id" element={<ProductDetailPage/>} />
+    <Route path="/productCategory/:id" element={<ProductCategory/>} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/our-story" element={<OurStory />} />
     <Route path="/shop-page" element={<ShopPage />} />
     <Route path="/login" element={<Login />} />
     <Route path="/sign-in" element={<SignIn />} />
     <Route path="/store-location" element={<StoreLocation />} />
+    <Route path="/store-location/:id" element={<LocationDetails />} />
     </Routes></ApolloProvider>
    
   </BrowserRouter> 

@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 
 const ValentineCard = ({id, name, price, description, image}) => {
   return (
-    <Link to={`/product/${id}`}>
+    
           <div className="row text">
-          <div className="card-body">
+         <Link to={`/product/${id}`}> <div className="card-body">
             <div className="image-box">
                 <img
                   src={`${BACKEND_URL + image}`}
@@ -23,8 +23,9 @@ const ValentineCard = ({id, name, price, description, image}) => {
             <div className="price">${price}</div>
           </div>
      
-      </div>
-      </Link>
+     </Link> 
+     </div>
+      
     
   )
 }

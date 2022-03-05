@@ -16,7 +16,7 @@ function NavBar() {
 
     if(loading) return <p>Loading...</p>
     if(error) return <p>Error :(</p>
-    if(data) console.log(data)
+    // if(data) console.log(data)
 
   return (
     <div className="body">
@@ -34,11 +34,11 @@ function NavBar() {
             <li>
               <Link to="/shop-page">We Make</ Link>
               <ul className="sub-menu">
-                {data.collections.data.map((collections) => (
+                {/* {data.collections.data.map((collections) => (
                   <li key={collections.id}>
                     <Link to={`/shop-page/${collections.id}`}>{collections.categoryName}</ Link>
                   </li>
-                ))}
+                ))} */}
               </ul>
             </li>
             <li>
