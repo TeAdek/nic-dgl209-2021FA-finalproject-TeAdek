@@ -52,14 +52,14 @@ console.log(locationList)
         {collectionList.data.collections.data.map(({id, attributes}) => (
           <li key={id}>
             <div>
-              <a href={`/collections/${id}`}>
+              <Link to={`/productCategory/${id}`}>
                 <img
                   src={`${BACKEND_URL + attributes.categoryImages.data[0].attributes.url}`}
                   alt={attributes.categoryName}
                   className="collection-images"
                 />
                 <h3 className="text">{attributes.categoryName}</h3>
-              </a>
+              </Link>
             </div>
           </li>
         ))}
@@ -69,7 +69,7 @@ console.log(locationList)
        <ul className="location-row">
        {locationList.data.locations.data.map(({id, attributes}) => (
            <li key={id} className="location-box">
-               <div className="image-box"><a href={`/locations/${id}`}>
+               <div className="image-box"><Link to={`/store-location/${id}`}>
                  <img
                    src={`${BACKEND_URL + attributes.locationImage.data[1].attributes.url}`}
                    alt={attributes.locationName}
@@ -78,7 +78,7 @@ console.log(locationList)
                  <h3 className="text headings">{attributes.locationName}</h3>
                  <p>{attributes.address}</p>
                 <p>{attributes.openFor}</p>
-               </a></div>
+               </Link></div>
            </li>
       )) }
       </ul> 
