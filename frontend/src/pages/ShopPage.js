@@ -31,7 +31,7 @@ const collectionList = useQuery(GET_COLLECTIONLIST)
         return <CollectionCard
         key={key}
         id={id}
-        categoryName={attributes.categoryName}  
+      categoryName={attributes.categoryName}  
        image={attributes.categoryImages.data[0].attributes.url}
         /> 
       })
