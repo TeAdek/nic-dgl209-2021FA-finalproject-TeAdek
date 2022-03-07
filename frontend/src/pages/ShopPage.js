@@ -24,11 +24,11 @@ const collectionList = useQuery(GET_COLLECTIONLIST)
   
    
   return (
-    <div>
+    <div className='shop-page'>
 <h1>{pageName}</h1>
 <p>{pages}</p>
-<div>    
-   <ul>{collectionList.data.collections.data.map(({id, attributes}, key) => {
+<div >    
+   <ul className="collections-row">{collectionList.data.collections.data.map(({id, attributes}, key) => {
         return <CollectionCard
         key={key}
         id={id}

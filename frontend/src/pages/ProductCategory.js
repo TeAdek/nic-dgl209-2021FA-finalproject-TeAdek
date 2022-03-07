@@ -15,18 +15,48 @@ export default function ProductCategory() {
   if(error) return <p>Error :(</p>
 
   console.log(data.collection.data.attributes.products.data[0].attributes)
+  console.log(data.collection)
   return (
     <div>
-      <h1>{data.collection.data.attributes.post.data.attributes.pageName}</h1>
-       <p>{data.collection.data.attributes.post.data.attributes.pages}</p>
+
+       <div class="jumbotron jumbotron-fluid">
+        <div
+          style={{
+            backgroundImage: `url(${
+              BACKEND_URL + data.collection.data.attributes.categoryImages.data[0].attributes.url
+            })`, backgroundRepeat: 'no-repeat',
+          }}
+          class="container d-flex justify-content-end align-items-end"
+        >
+          <div className='category-detail d-flex flex-column'>
+            <h1>{data.collection.data.attributes.post.data.attributes.pageName}</h1>
+       <p>{data.collection.data.attributes.post.data.attributes.pages}</p></div>
+          
+        </div>
+      </div>
+      {/* <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> */}
+<div className='product'>
       {data.collection.data.attributes.products.data.map(({id, attributes}) => {
-         return <div key={id}>
-          <Link to={`/product/${id}`}><img src={`${BACKEND_URL + attributes.images.data[0].attributes.url}`} alt={attributes.productName}/>
-            <p>{attributes.productName}</p>
-            <p>{attributes.details}</p>
-            <p>{attributes.description}</p></Link> 
+         return <div className='card' style={{width: 100 + '%'}} key={id}>
+          <Link to={`/product/${id}`}>
+            <img class="card-img-top" src={`${BACKEND_URL + attributes.images.data[0].attributes.url}`} 
+            alt={attributes.productName}/>
+            <div class="card-body">
+              <p className="card-title">{attributes.productName}</p>
+            <p className="card-subtitle mb-2 text-muted" >{attributes.description}</p>
+            <p>${attributes.price}</p>
+            </div>
+            
+            </Link> 
           </div>
-      })}
+      })}</div>
     </div>
   )
 }

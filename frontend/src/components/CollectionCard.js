@@ -6,7 +6,7 @@ const CollectionCard = ({id, categoryName, image}) => {
     return (
     <div>
     <Link to={`/productcategory/${id}`}>
-      <div className="collections-row">
+      <div>
           <div>
               <img
                 src={`${BACKEND_URL + image}`}

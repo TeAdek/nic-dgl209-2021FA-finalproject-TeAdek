@@ -57,10 +57,6 @@ a {
   font-size: 1rem;
 }
 
-.card-body {
-  width: 30%;
-}
-
 .image-box {
   overflow: hidden;
   margin: auto;
@@ -100,7 +96,7 @@ a {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
   padding: 0;
 }
 
@@ -211,6 +207,7 @@ nav li {
   max-width: 100%;
   min-height: 300px;
   background-position: 70% 60%;
+  padding: 0;
 }
 
 .story{
@@ -282,4 +279,39 @@ min-height: 100px;
 
 .us p{
   margin: 20px 0;
+}
+
+/***************Shop Page*******************************/
+
+.shop-page, .product{
+  margin: auto;
+  width: 80%;
+}
+
+.shop-page h1, .product h1{
+  margin-top: 20px;
+ 
+}
+
+.shop-page p, .product p{
+  margin: 0 0 20px 0;
+}
+
+/***************Product Category*******************************/
+
+.category-detail{
+  background-color: pink;
+  width: 400px;
+  padding: 10px;
+}
+
+.product .card-body{
+  text-align: center;
+}
+
+.product{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
 }
