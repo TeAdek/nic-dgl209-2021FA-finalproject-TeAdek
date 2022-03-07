@@ -338,3 +338,16 @@ min-height: 100px;
   padding-bottom: 10px;
   text-align: center;
 }
+
+/***************StoreLocation*******************************/
+.location{
+  margin: auto;
+  width: 80%;
+}
+.location-item {
+  display: flex;
+}
+
+.location-card{
+  margin-right: 20px;
+}

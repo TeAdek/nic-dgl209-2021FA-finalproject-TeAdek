@@ -13,7 +13,8 @@ export default function Footer() {
 
   return (
     <div className="footer">
-    <div className="flex"><img src="/images/logo.png.webp" alt="" />
+    <div className="flex">
+        <img src="/images/logo.png.webp" alt="" />
       <div>
         <h2>Store</h2>
         <p>Our Story</p>

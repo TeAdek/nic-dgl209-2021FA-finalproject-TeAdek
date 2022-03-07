@@ -4,20 +4,19 @@ import {Link} from 'react-router-dom'
 
 const LocationCard = ({id, address, locationImage, locationName, openFor}) => {
     return (
-        <Link to={`/store-location/${id}`}>
-        <div className="row text">
-        <div className="card-body">
-          <div className="image-box">
+        <Link to={`/store-location/${id}`} className='location-card'>
+        <div className="card" style={{width: 100 + '%'}}>
+        
+          <div >
               <img
                 src={`${BACKEND_URL + locationImage}`}
                 alt={locationName}
-                className="card-images"
+                className="card-img-top"
               />
              
           </div>
-          <h3>{locationName}</h3>
-          {/* <p>{description}</p>
-          <div className="price">${price}</div> */}
+          <div className="card-body">
+          <h3 lass="card-text">{locationName}</h3>
         </div>
    
     </div>

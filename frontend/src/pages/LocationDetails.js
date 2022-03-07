@@ -19,7 +19,7 @@ export default function LocationDetails() {
      const {address, locationDescription, locationImage, locationName, openFor, phoneNumber} = data.location.data.attributes
 
      return (
-         <div>
+         <div className='location'>
              <h1>{locationName}</h1>
              <img
                 src={`${BACKEND_URL + locationImage.data[1].attributes.url}`}

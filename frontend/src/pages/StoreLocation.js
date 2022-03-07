@@ -18,13 +18,13 @@ const pageData = useQuery(GET_PAGEINTRODUCTIONS, {variables:{
 
   console.log(pageData)
   console.log(locationdata)
-   
+
   return (
-    <div>
+    <div className='location'>
       <h1>{pageData.data.post.data.attributes.pageName}</h1>
       <p>{pageData.data.post.data.attributes.pages}</p>
-      {locationdata.data.locations.data.map(({id, attributes}, index)=> {
-return <LocationCard
+      <div className='location-item'>{locationdata.data.locations.data.map(({id, attributes}, index)=> {
+return <LocationCard 
 key={index}
 id={id}
 address={attributes.address}
@@ -33,5 +33,6 @@ locationName={attributes.locationName}
  openFor={attributes.openFor}/>
  
     })}</div>
+      </div>
   )
 }
