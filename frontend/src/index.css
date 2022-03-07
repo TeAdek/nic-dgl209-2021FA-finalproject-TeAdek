@@ -159,6 +159,16 @@ nav li {
   object-fit: cover;
   margin-left: 50px;
 }
+
+.card-img-overlay{
+  background-color: #ffffff;
+  opacity: 0.6;
+}
+
+.card-img-overlay h3, .card-img-overlay p{
+  color:black;
+  font-weight: bold;
+}
 /***************Product Screen*******************************/
 .product-row {
   display: grid;

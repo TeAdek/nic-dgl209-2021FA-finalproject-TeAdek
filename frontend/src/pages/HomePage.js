@@ -23,6 +23,7 @@ console.log(locationList)
 
   return (
     <div className="page-screen">
+       <h2 className="title-headings">Featured Products</h2>
        <ul className='product'>
        {valentineGift.data.collection.data.attributes.products.data.map(({id, attributes}) => (
           <li key={id}>
@@ -64,21 +65,25 @@ console.log(locationList)
           </li>
         ))}
       </ul>
-            
+     
        <h2 className="title-headings">Store Locations</h2>
        <ul className="location-row">
        {locationList.data.locations.data.map(({id, attributes}) => (
            <li key={id} className="location-box">
-               <div className="image-box">
+               <div className="card" style={{width: 100 + '%'}}>
                  <Link to={`/store-location/${id}`}>
                  <img
+                 
                    src={`${BACKEND_URL + attributes.locationImage.data[1].attributes.url}`}
                    alt={attributes.locationName}
-                      className="location-images"
+                   class="card-img"
                  />
-                 <h3 className="text headings">{attributes.locationName}</h3>
-                 <p>{attributes.address}</p>
-                <p>{attributes.openFor}</p>
+                  <div class="card-img-overlay">
+                    <h3 class="card-title">{attributes.locationName}</h3>
+                 <p class="card-text">{attributes.address}</p>
+                <p class="card-text">{attributes.openFor}</p>
+                </div>
+                 
                </Link></div>
            </li>
       )) }

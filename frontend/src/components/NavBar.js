@@ -48,11 +48,11 @@ console.log(data.collections.data);
                   Our Story
                 </Link>
               </li>
+          
               <li class="nav-item dropdown">
                 <Link
                   to="/shop-page"
                   class="nav-link dropdown-toggle"
-                  href="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
