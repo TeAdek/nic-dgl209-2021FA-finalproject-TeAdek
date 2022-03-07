@@ -36,6 +36,12 @@
       "relation": "oneToOne",
       "target": "api::collection.collection",
       "inversedBy": "post"
+    },
+    "additionalstuff": {
+      "type": "richtext"
+    },
+    "additionalstuff2": {
+      "type": "richtext"
     }
   }
 }

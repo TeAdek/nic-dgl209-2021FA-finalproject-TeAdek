@@ -2,6 +2,7 @@ import React from 'react'
 import {useQuery} from "@apollo/client";
 import { GET_PAGEINTRODUCTIONS, GET_COLLECTIONLIST} from "../gqloperation/queries";
 import CollectionCard from '../components/CollectionCard';
+import { BACKEND_URL } from "../helpers";
 
 export const ShopPage = () => {
   const pageData = useQuery(GET_PAGEINTRODUCTIONS, {variables:{

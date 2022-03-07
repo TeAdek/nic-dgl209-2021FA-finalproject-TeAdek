@@ -108,6 +108,8 @@ query Post($postId: ID) {
           }
         }
         pageName
+        additionalstuff
+        additionalstuff2
       }
     }
   }
