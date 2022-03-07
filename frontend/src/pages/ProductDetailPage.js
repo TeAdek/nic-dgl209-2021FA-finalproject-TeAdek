@@ -31,16 +31,24 @@ export default function ProductDetailPage() {
               <div>{countInStock>0? (<span>In Stock</span>):(<span>Unavailable</span>)}</div>
           <div>{countInStock>0 && (
                <>
-    <button className="add-to-cart-product"> Add to Cart</button></>
+    <button className="btn btn-primary"> Add to Cart</button></>
               
               )}</div>
           
             </div>
 
-            <div className="product-description">
-              <h3>Description</h3>
-              <p>{details}</p>
-            </div>
+            <div class="card product-description">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Description</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <p class="card-text" id="#">{details}</p>
+  </div>
+</div>
           </div>
         </div>
       );

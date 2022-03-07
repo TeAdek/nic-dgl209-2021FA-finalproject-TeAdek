@@ -35,7 +35,7 @@ export const OurStory = () => {
       <div className="story">
         <div className="started">
             <h2>How We Started</h2> 
-            <p>{pages}</p>
+            <p className="paragraph">{pages}</p>
             <img
             src={`${BACKEND_URL + pageImage.data[1].attributes.url}`}
             alt=""
