@@ -308,3 +308,33 @@ min-height: 100px;
   gap: 30px;
   margin-top: 30px;
 }
+
+/***************Footer*******************************/
+
+.footer{
+  margin-top: 30px;
+  padding-top: 10px;
+  background-color: #1985A1;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.footer img {
+  width: 100px;
+  max-height: 40px;
+}
+.footer h2{
+  font-size: 20px;
+}
+
+.footer p{
+  margin: 0;
+}
+
+.trademark{
+  margin-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}

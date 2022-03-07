@@ -69,7 +69,8 @@ console.log(locationList)
        <ul className="location-row">
        {locationList.data.locations.data.map(({id, attributes}) => (
            <li key={id} className="location-box">
-               <div className="image-box"><Link to={`/store-location/${id}`}>
+               <div className="image-box">
+                 <Link to={`/store-location/${id}`}>
                  <img
                    src={`${BACKEND_URL + attributes.locationImage.data[1].attributes.url}`}
                    alt={attributes.locationName}

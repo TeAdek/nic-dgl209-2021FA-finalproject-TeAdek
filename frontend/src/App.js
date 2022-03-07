@@ -14,6 +14,7 @@ import ProductCategory from "./pages/ProductCategory";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import LocationDetails from "./pages/LocationDetails";
+import Footer from "./components/Footer";
 
 //apollo client
 const client = new ApolloClient({
@@ -37,8 +38,8 @@ function App() {
     <Route path="/sign-in" element={<SignIn />} />
     <Route path="/store-location" element={<StoreLocation />} />
     <Route path="/store-location/:id" element={<LocationDetails />} />
-    </Routes></ApolloProvider>
-   
+    </Routes>
+   <Footer/></ApolloProvider>
   </BrowserRouter> 
   );
 }
