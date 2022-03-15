@@ -18,11 +18,6 @@ import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
 import { CartProvider } from "react-use-cart";
 
-//import fontawesome
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-
-library.add(fas)
 
 //apollo client
 const client = new ApolloClient({

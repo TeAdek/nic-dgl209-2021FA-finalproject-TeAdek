@@ -1,13 +1,11 @@
 import React from 'react'
 import { useCart } from 'react-use-cart'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faCircle, faCircleMinus, faCoffee, faMinusCircle, fas } from '@fortawesome/free-solid-svg-icons'
-  import { library } from "@fortawesome/fontawesome-svg-core";
-  import { faUser } from "@fortawesome/free-solid-svg-icons";
-  
-  library.add(faUser);
+import {faCircleMinus} from '@fortawesome/free-solid-svg-icons'
+
 export default function Cart() {
   const {isEmpty, items, cartTotal, updateItemQuantity, removeItem} = useCart()
+  const jwt = localStorage.item('jwt')
   if(isEmpty) return <h1>Your cart is empty</h1>
   if(items) console.log(items)
 
@@ -47,7 +45,12 @@ export default function Cart() {
       <div>
         <h3>Total Price</h3>
         <h3>${cartTotal}</h3>
-        
+        {
+                  jwt ?
+                   <button>checkout</button>
+                   :
+                   <div>Please login to checkout</div>
+               }
       </div>
       
 </div>
