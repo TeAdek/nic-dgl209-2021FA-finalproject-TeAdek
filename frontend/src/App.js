@@ -15,6 +15,14 @@ import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import LocationDetails from "./pages/LocationDetails";
 import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import { CartProvider } from "react-use-cart";
+
+//import fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 
 //apollo client
 const client = new ApolloClient({
@@ -24,6 +32,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
     <ApolloProvider client={client}> 
     <NavBar />
@@ -38,9 +47,11 @@ function App() {
     <Route path="/sign-in" element={<SignIn />} />
     <Route path="/store-location" element={<StoreLocation />} />
     <Route path="/store-location/:id" element={<LocationDetails />} />
+    <Route path="/cart" element={<Cart />} />
     </Routes>
    <Footer/></ApolloProvider>
   </BrowserRouter> 
+  </CartProvider>
   );
 }
 

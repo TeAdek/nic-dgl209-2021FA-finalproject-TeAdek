@@ -101,9 +101,9 @@ console.log(data.collections.data);
                 </li>
 
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <Link to="/cart" class="nav-link">
                     <i className="fa fa-shopping-cart" />
-                  </a>
+                  </Link>
                 </li>
               </div>
             </ul>
