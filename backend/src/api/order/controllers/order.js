@@ -23,6 +23,7 @@ module.exports = createCoreController('api::order.order', ({strapi})=>({
                 city,
                 state,
                 amount,
+                items,
                 pin,
                 user:ctx.state.user.email
             }
