@@ -58,6 +58,23 @@ export const GET_COLLECTIONLIST = gql `query CollectionsList {
   }
 }`
 
+export const GET_COLLECTIONSELECTION = gql `query Data($pagination: PaginationArg) {
+  collections(pagination: $pagination) {
+    data {
+      id
+      attributes {
+        categoryName
+        categoryImages {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}`
 
 export const GET_PRODUCTDETAILS = gql `
 query Product($productId: ID) {

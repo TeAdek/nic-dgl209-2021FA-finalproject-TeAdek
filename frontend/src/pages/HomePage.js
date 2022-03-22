@@ -1,29 +1,50 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
-import {GET_VALENTINEGIFTS, GET_COLLECTIONLIST, GET_LOCATIONS, GET_SLIDESHOWS} from "../gqloperation/queries";
+import {GET_VALENTINEGIFTS, GET_COLLECTIONSELECTION, GET_LOCATIONS, GET_SLIDESHOWS} from "../gqloperation/queries";
 import { Link } from "react-router-dom";
 import { BACKEND_URL } from "../helpers";
 import { Slide } from 'react-slideshow-image';
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function HomePage() {
   const valentineGift = useQuery(GET_VALENTINEGIFTS, {
     variables: {collectionId: 10}
   })
-  const collectionList = useQuery(GET_COLLECTIONLIST)
+  const collectionSelection = useQuery(GET_COLLECTIONSELECTION, {
+    variables: {pagination: {limit: 6}}
+  })
   const locationList = useQuery(GET_LOCATIONS)
   const slideshowList = useQuery(GET_SLIDESHOWS)
 
-  const errors = valentineGift.error || collectionList.error || locationList.error || slideshowList.error;
-  const loading = valentineGift.loading || collectionList.loading || locationList.loading || slideshowList.loading;
+  const errors = valentineGift.error || collectionSelection.error || locationList.error || slideshowList.error;
+  const loading = valentineGift.loading || collectionSelection.loading || locationList.loading || slideshowList.loading;
 
   if(loading) return <p>Loading...</p>
   if(errors) return <p>Error :(</p>
 
   console.log(valentineGift)
-  console.log(collectionList)
+  console.log(collectionSelection)
 console.log(locationList)
 console.log(slideshowList)
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
 
 const properties = {
   indicators: true,
@@ -49,36 +70,36 @@ const properties = {
           </div>
         ))}
       </Slide>
-     
-      
-      <div className="page-screen"> <h2 className="title-headings">Featured Products</h2>
-       <ul className='product'>
+
+      <div className="page-screen">
+         <h2 className="title-headings featured">Featured Products</h2>
+      <Carousel responsive={responsive} autoPlay={false}>
        {valentineGift.data.collection.data.attributes.products.data.map(({id, attributes}) => (
-          <li key={id}>
-            <div className="image-box card">
+            <div className="card card-space" key={id}>
+              <div className="image-box">
               <Link to={`/product/${id}`}>
               <img
-              class="card-img-top"
+              class="card-img-top card-images"
                   src={`${BACKEND_URL + attributes.images.data[0].attributes.url}`}
                   alt={attributes.name}
                 />
-                <span className="add-to-cart">
-                  <p>Add To Cart</p>
-                </span>
-              </Link>
-              <div class="card-body"><h3 class="card-title">{attributes.name}</h3>
-            <p className="card-subtitle mb-2 text-muted">{attributes.description}</p>
-            <div className="price">${attributes.price}</div></div>
+                
+              </Link></div>
+             
+              <div class="card-body">
+                 <Link to={`/product/${id}`}><p class="card-title">{attributes.productName}</p></Link>
+            <p className="card-subtitle card-subtitle-height mb-2 text-muted">{attributes.description}</p>
+            <div className="price">${attributes.price}</div>
+                  <button className="button">Add To Cart</button>
+                </div>
               
             </div>
-
-            
-          </li>
         ))}
-      </ul>
+      
+      </Carousel> 
       <h2 className="title-headings">Shop Our Collections</h2>
       <ul className="collections-row">
-        {collectionList.data.collections.data.map(({id, attributes}) => (
+        {collectionSelection.data.collections.data.map(({id, attributes}) => (
           <li key={id}>
             <div>
               <Link to={`/productCategory/${id}`}>
@@ -93,6 +114,7 @@ const properties = {
           </li>
         ))}
       </ul>
+      <div className="view-more-center"><Link to="/shop-page"><button className="button view-more">View All</button></Link></div> 
      
        <h2 className="title-headings">Store Locations</h2>
        <ul className="location-row">
@@ -104,7 +126,7 @@ const properties = {
                  
                    src={`${BACKEND_URL + attributes.locationImage.data[1].attributes.url}`}
                    alt={attributes.locationName}
-                   class="card-img"
+                   class="card-img card-img-height"
                  />
                   <div class="card-img-overlay">
                     <h3 class="card-title">{attributes.locationName}</h3>
