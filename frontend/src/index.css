@@ -40,6 +40,19 @@ a {
   text-decoration: none;
 }
 
+/*Home Page Slideshow*/
+.each-fade{
+  position: relative;
+}
+
+.each-fade .infoSlideshow{
+  position: absolute;
+  color: brown;
+    bottom: 20px;
+    left: 20px;
+    width: 400px;
+}
+
 /*Home Page Product*/
 .page-screen {
   width: 80%;

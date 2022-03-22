@@ -3,7 +3,6 @@ import {useQuery} from "@apollo/client";
 import {GET_VALENTINEGIFTS, GET_COLLECTIONLIST, GET_LOCATIONS, GET_SLIDESHOWS} from "../gqloperation/queries";
 import { Link } from "react-router-dom";
 import { BACKEND_URL } from "../helpers";
-import ImageGallery from 'react-image-gallery';
 import { Slide } from 'react-slideshow-image';
 
 
@@ -26,20 +25,26 @@ function HomePage() {
 console.log(locationList)
 console.log(slideshowList)
 
+const properties = {
+  indicators: true,
+}
+
   return (
     <div>
-     
-      <Slide>
+      <Slide {...properties}>
            {slideshowList.data.slideshows.data.map(({id, attributes}) => (
           <div className="each-slide" key={id}>
             <div className="each-fade">
-            <div> <img
+            <div> 
+              <img
               class="card-img-top"
                   src={`${BACKEND_URL + attributes.image.data[0].attributes.url}`}
                   alt={attributes.name}
                 /></div>
-              
-                <span>Slide 1</span></div>
+              <div className="infoSlideshow"> <p>{attributes.title}</p>
+                <p>{attributes.description}</p></div>
+             
+                </div>
               
           </div>
         ))}
