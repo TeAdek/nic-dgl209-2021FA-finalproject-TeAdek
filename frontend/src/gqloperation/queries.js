@@ -213,3 +213,22 @@ query CategoryProducts($collectionId: ID) {
     }
   }
 }`
+
+export const GET_SLIDESHOWS = gql `query Slideshows {
+  slideshows {
+    data {
+      id
+      attributes {
+        description
+        title
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}`

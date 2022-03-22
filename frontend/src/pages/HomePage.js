@@ -1,8 +1,11 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
-import {GET_VALENTINEGIFTS, GET_COLLECTIONLIST, GET_LOCATIONS} from "../gqloperation/queries";
+import {GET_VALENTINEGIFTS, GET_COLLECTIONLIST, GET_LOCATIONS, GET_SLIDESHOWS} from "../gqloperation/queries";
 import { Link } from "react-router-dom";
 import { BACKEND_URL } from "../helpers";
+import ImageGallery from 'react-image-gallery';
+import { Slide } from 'react-slideshow-image';
+
 
 function HomePage() {
   const valentineGift = useQuery(GET_VALENTINEGIFTS, {
@@ -10,9 +13,10 @@ function HomePage() {
   })
   const collectionList = useQuery(GET_COLLECTIONLIST)
   const locationList = useQuery(GET_LOCATIONS)
+  const slideshowList = useQuery(GET_SLIDESHOWS)
 
-  const errors = valentineGift.error || collectionList.error || locationList.error;
-  const loading = valentineGift.loading || collectionList.loading || locationList.loading;
+  const errors = valentineGift.error || collectionList.error || locationList.error || slideshowList.error;
+  const loading = valentineGift.loading || collectionList.loading || locationList.loading || slideshowList.loading;
 
   if(loading) return <p>Loading...</p>
   if(errors) return <p>Error :(</p>
@@ -20,10 +24,29 @@ function HomePage() {
   console.log(valentineGift)
   console.log(collectionList)
 console.log(locationList)
+console.log(slideshowList)
 
   return (
-    <div className="page-screen">
-       <h2 className="title-headings">Featured Products</h2>
+    <div>
+     
+      <Slide>
+           {slideshowList.data.slideshows.data.map(({id, attributes}) => (
+          <div className="each-slide" key={id}>
+            <div className="each-fade">
+            <div> <img
+              class="card-img-top"
+                  src={`${BACKEND_URL + attributes.image.data[0].attributes.url}`}
+                  alt={attributes.name}
+                /></div>
+              
+                <span>Slide 1</span></div>
+              
+          </div>
+        ))}
+      </Slide>
+     
+      
+      <div className="page-screen"> <h2 className="title-headings">Featured Products</h2>
        <ul className='product'>
        {valentineGift.data.collection.data.attributes.products.data.map(({id, attributes}) => (
           <li key={id}>
@@ -87,7 +110,8 @@ console.log(locationList)
                </Link></div>
            </li>
       )) }
-      </ul> 
+      </ul> </div>
+      
     </div>
       
 
