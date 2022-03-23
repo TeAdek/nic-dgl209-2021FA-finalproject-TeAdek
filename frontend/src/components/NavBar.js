@@ -3,6 +3,8 @@ import { useQuery } from "@apollo/client";
 import { GET_COLLECTIONLIST } from "../gqloperation/queries";
 import { Link, useNavigate } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "font-awesome/css/font-awesome.css";
 
 function NavBar() {
@@ -17,7 +19,7 @@ function NavBar() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   if (data) console.log(data);
-console.log(data.collections.data);
+  console.log(data.collections.data);
   return (
     <div className="body">
       <nav class="navbar navbar-expand-md navbar-dark">
@@ -38,59 +40,82 @@ console.log(data.collections.data);
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-            <div className="menu"><li class="nav-item">
-                <Link
-                  to="/our-story"
-                  class="nav-link active"
-                  aria-current="page"
-                  href="#"
-                >
-                  Our Story
-                </Link>
-              </li>
-          
-              <li class="nav-item dropdown">
-                <Link
-                  to="/shop-page"
-                  class="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  We Make
-                </Link>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {data.collections.data.map((collections) => (
-                  
-                    <Link to={`/productCategory/${collections.id}`} class="dropdown-item" key={collections.id}>{collections.attributes.categoryName}</ Link>
-                 
-                ))}
-                </div>
+              <div className="menu">
+                <li class="nav-item">
+                  <Link
+                    to="/our-story"
+                    class="nav-link active"
+                    aria-current="page"
+                    href="#"
+                  >
+                    Our Story
+                  </Link>
                 </li>
-              <li class="nav-item">
-                <Link to="/blog" class="nav-link">
-                  Blog
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link to="/store-location" class="nav-link">
-                  Store Locations
-                </Link>
-              </li></div>
-              
+
+                <li class="nav-item dropdown">
+                  <Link
+                    to="/shop-page"
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    We Make
+                  </Link>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {data.collections.data.map((collections) => (
+                      <Link
+                        to={`/productCategory/${collections.id}`}
+                        class="dropdown-item"
+                        key={collections.id}
+                      >
+                        {collections.attributes.categoryName}
+                      </Link>
+                    ))}
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <Link to="/blog" class="nav-link">
+                    Blog
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="/store-location" class="nav-link">
+                    Store Locations
+                  </Link>
+                </li>
+              </div>
 
               <div className="menu-icons">
                 <li class="nav-item">
                   {jwt ? (
                     <>
-                      <li onClick={logout} class="nav-item">
-                        <button>Logout</button>
-                      </li>
+                      <div class="dropdown">
+                        <div
+                          class="dropdown-toggle"
+                          id="dropdownMenuButton2"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <FontAwesomeIcon icon={faUser} color="white" />
+                        </div>
+                        <ul
+                          class="dropdown-menu dropdown-menu-dark"
+                          aria-labelledby="dropdownMenuButton2"
+                        >
+                          <li onClick={logout} class="nav-item">
+                            {" "}
+                            Logout{" "}
+                          </li>
+                        </ul>
+                      </div>
                     </>
                   ) : (
                     <>
-                      <Link to="/login" class="nav-link">Login</Link>
+                      <Link to="/login" class="nav-link">
+                        Login
+                      </Link>
                     </>
                   )}
                 </li>
@@ -107,7 +132,6 @@ console.log(data.collections.data);
                 </li>
               </div>
             </ul>
-         
           </div>
         </div>
       </nav>

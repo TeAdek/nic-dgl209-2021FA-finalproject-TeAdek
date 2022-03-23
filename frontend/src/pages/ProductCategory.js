@@ -26,7 +26,7 @@ export default function ProductCategory() {
               BACKEND_URL + data.collection.data.attributes.categoryImages.data[0].attributes.url
             })`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
           }}
-          class="container d-flex justify-content-end align-items-end"
+          class="container d-flex justify-content-center align-items-center"
         >
           <div className='category-detail d-flex flex-column'>
             <h1>{data.collection.data.attributes.post.data.attributes.pageName}</h1>

@@ -31,31 +31,33 @@ function Login() {
           })
     }
     return (
-        <div>
+        <div className='form-center'>
             {
                 error && 
                 <div>{error.message}</div>
             }
+            <div className='form'>
            <h3>Login </h3>
            <form onSubmit={handleSubmit}>
+               <p className='form-text'>E-mail address</p>
                <input 
                  type="text" 
-                 placeholder="email or username"
                  name="identifier"
                  onChange={handleChange}
                  required
                />
+               <p className='form-text'>Password</p>
                <input 
                  type="password" 
-                 placeholder="password"
                  name="password"
                  onChange={handleChange}
                  required
                />
-               <button type="submit" className="btn blue">Login</button>
+               <button type="submit" className="btn btn-primary">Login</button>
            </form>
-
            <p>Don't have an account? <Link to="/sign-in">Create a New Account</Link> </p>
+
+           </div> 
         </div>
     )
 }

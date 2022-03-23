@@ -43,15 +43,6 @@ function HomePage() {
   console.log(locationList);
   console.log(slideshowList);
 
-  // const addToCart = ()=>{
-  //   addItem({
-  //     id:id,
-  //     productName,
-  //     price,
-  //     img: BACKEND_URL+images.data[0].attributes.url
-  //   })
-  // }
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

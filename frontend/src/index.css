@@ -49,10 +49,12 @@ a {
 
 .each-fade .infoSlideshow{
   position: absolute;
-  color: brown;
+  background-color: rgba(0, 0, 0, 0.616);
+  color: #ffffff;
     bottom: 20px;
     left: 20px;
     width: 400px;
+    padding: 15px;
 }
 
 /*Home Page Product*/
@@ -319,7 +321,6 @@ nav li {
   
 }
 
-
 .us img{
 width: 100%;
 min-height: 100px;
@@ -348,9 +349,11 @@ min-height: 100px;
 /***************Product Category*******************************/
 
 .category-detail{
-  background-color: pink;
   width: 400px;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.616);
+  color: #ffffff;
+    padding: 15px;
+
 }
 
 .product .card-body{
@@ -364,6 +367,39 @@ min-height: 100px;
   margin-top: 30px;
 }
 
+/***************Login*******************************/
+.form-center{
+  margin: 40px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: auto;
+  padding: 30px 40px;
+  border: 1px rgba(46, 45, 45, 0.63) solid;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  border: 1px solid black;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  padding: 2px 8px;
+}
+
+.form-text{
+  margin: 0;
+  font-weight: bold;
+  color: black;
+}
 /***************Footer*******************************/
 
 .footer{
