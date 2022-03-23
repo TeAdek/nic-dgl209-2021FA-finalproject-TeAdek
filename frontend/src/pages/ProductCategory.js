@@ -24,7 +24,7 @@ export default function ProductCategory() {
           style={{
             backgroundImage: `url(${
               BACKEND_URL + data.collection.data.attributes.categoryImages.data[0].attributes.url
-            })`, backgroundRepeat: 'no-repeat',
+            })`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
           }}
           class="container d-flex justify-content-end align-items-end"
         >

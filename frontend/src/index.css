@@ -367,7 +367,6 @@ min-height: 100px;
 /***************Footer*******************************/
 
 .footer{
-  margin-top: 30px;
   padding-top: 10px;
   background-color: #1985A1;
 }
@@ -399,10 +398,43 @@ min-height: 100px;
   margin: auto;
   width: 80%;
 }
+
+.location-detail{
+  background-color: rgba(0, 0, 0, 0.616);
+  color: #ffffff;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
 .location-item {
   display: flex;
 }
 
 .location-card{
   margin-right: 20px;
+}
+
+.space{
+  padding: 20px;
+}
+
+.location-text{
+  text-align: center;
+  padding: 20px;
+}
+
+hr.border-line{
+  border: 0; 
+  border-top: 5px double #ffffff; 
+  padding: 0; 
+  margin: 10px 0;
+  opacity: 1;
+}
+
+.location-map{
+  background-color: azure;
 }
