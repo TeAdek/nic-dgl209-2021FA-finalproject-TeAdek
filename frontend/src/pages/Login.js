@@ -55,7 +55,7 @@ function Login() {
                />
                <button type="submit" className="btn btn-primary">Login</button>
            </form>
-           <p>Don't have an account? <Link to="/sign-in">Create a New Account</Link> </p>
+           <p>Don't have an account? <Link to="/sign-in">Sign Up</Link> </p>
 
            </div> 
         </div>

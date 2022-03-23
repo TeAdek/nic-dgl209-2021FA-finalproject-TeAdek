@@ -118,7 +118,9 @@ function HomePage() {
                   <div className="price">${attributes.price}</div>
                   <div>
                         <button
-                          className="button add-to-cart"
+                        type="button" 
+                        className="btn btn-success add-to-cart"
+                          
                           onClick={() => {
                             addItem({
                               id: id,
@@ -161,7 +163,8 @@ function HomePage() {
         </ul>
         <div className="view-more-center">
           <Link to="/shop-page">
-            <button className="button view-more">View All</button>
+            <button type="button" 
+                        className="btn btn-success view-more">View All</button>
           </Link>
         </div>
         <h2 className="title-headings">Store Locations</h2>

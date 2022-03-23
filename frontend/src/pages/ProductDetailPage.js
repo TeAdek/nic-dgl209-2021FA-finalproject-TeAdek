@@ -41,23 +41,38 @@ export default function ProductDetailPage() {
               <div>{countInStock>0? (<span>In Stock</span>):(<span>Unavailable</span>)}</div>
           <div>{countInStock>0 && (
                <>
-    <button className="btn btn-primary" onClick={addToCart}> Add to Cart</button></>
+    <button className="btn btn-success" onClick={addToCart}> Add to Cart</button></>
               
               )}</div>
           
-            </div>
-
-            <div class="card product-description">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a className="nav-link active" href="#">Description</a>
-      </li>
-    </ul>
+           
+            <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Description
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      A deluxe box of truffles curated by you. Be the navigator of your own journey to the stars. Each box will take you on an edible story, layers upon layers of flavours unfolding as you eat through this assorted collection. Each person's story will be slightly different depending on which order and path you choose. You can check out our current collection here. * Please note this box requires 4-5 days more lead time. The truffle collection will be created especially for you. Porch drop and pick up dates may need to be rescheduled. If you need a box of truffles the same day or the next day please visit our King St. or Distillery store it's easy to order directly from the take-out window and get your box immediately.
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <p class="card-text" id="#">{details}</p>
+ 
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Ingredients
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
   </div>
+</div>
 </div>
           </div>
         </div>
