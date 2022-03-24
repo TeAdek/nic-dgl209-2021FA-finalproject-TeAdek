@@ -113,12 +113,9 @@ function NavBar() {
                     </>
                   ) : (
                     <>
-                    <button type="button" class="btn btn-secondary login-button">
-                      <Link to="/login" class="nav-link ">
+                      <Link to="/login" class="nav-link">
                         Login
                       </Link>
-                      </button>
-                      
                     </>
                   )}
                 </li>
