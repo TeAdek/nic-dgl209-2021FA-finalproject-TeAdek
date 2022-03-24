@@ -185,9 +185,16 @@ nav li {
   margin-left: 20px;
 }
 
+.login-button{
+padding: 0 10px;
+border-radius: 10px;
+
+}
+
 .menu {
   display: flex;
 }
+
 .menu-icons {
   display: flex;
   margin-right: 30px;
@@ -404,8 +411,12 @@ input{
 /***************Footer*******************************/
 
 .footer{
-  padding-top: 10px;
+  padding: 20px 40px;
   background-color: #1985A1;
+}
+
+.footer-link{
+  color: white;
 }
 
 .flex{
