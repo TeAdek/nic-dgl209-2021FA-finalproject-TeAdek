@@ -52,7 +52,27 @@ function NavBar() {
                   </Link>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item drop_down">
+                  <Link
+                    to="/shop-page"
+                    class="nav-link"
+                  >
+                    We Make
+                  </Link>
+                  <div class="dropdown__menu" aria-labelledby="navbarDropdown">
+                    <ul>
+                    {data.collections.data.map((collections) => (
+                     <li className="submenu-link"><Link
+                        to={`/productCategory/${collections.id}`}
+                        key={collections.id}
+                      >
+                        {collections.attributes.categoryName}
+                      </Link></li> 
+                    ))}</ul>
+                  </div>
+                </li>
+
+                {/* <li class="nav-item dropdown">
                   <Link
                     to="/shop-page"
                     class="nav-link dropdown-toggle"
@@ -74,7 +94,7 @@ function NavBar() {
                       </Link>
                     ))}
                   </div>
-                </li>
+                </li> */}
                 <li class="nav-item">
                   <Link to="/blog" class="nav-link">
                     Blog
