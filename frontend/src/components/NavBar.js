@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "font-awesome/css/font-awesome.css";
 
+import { useCart } from "react-use-cart";
+
 function NavBar() {
   const navigate = useNavigate();
   const { loading, error, data } = useQuery(GET_COLLECTIONLIST);
@@ -15,7 +17,9 @@ function NavBar() {
     localStorage.removeItem("jwt");
     navigate("/");
   };
+  const { totalItems } = useCart();
 
+  console.log(totalItems);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   if (data) console.log(data);
@@ -53,48 +57,24 @@ function NavBar() {
                 </li>
 
                 <li class="nav-item drop_down">
-                  <Link
-                    to="/shop-page"
-                    class="nav-link"
-                  >
+                  <Link to="/shop-page" class="nav-link">
                     We Make
                   </Link>
                   <div class="dropdown__menu" aria-labelledby="navbarDropdown">
                     <ul>
-                    {data.collections.data.map((collections) => (
-                     <li className="submenu-link"><Link
-                        to={`/productCategory/${collections.id}`}
-                        key={collections.id}
-                      >
-                        {collections.attributes.categoryName}
-                      </Link></li> 
-                    ))}</ul>
+                      {data.collections.data.map((collections) => (
+                        <li className="submenu-link">
+                          <Link
+                            to={`/productCategory/${collections.id}`}
+                            key={collections.id}
+                          >
+                            {collections.attributes.categoryName}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </li>
-
-                {/* <li class="nav-item dropdown">
-                  <Link
-                    to="/shop-page"
-                    class="nav-link dropdown-toggle"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    We Make
-                  </Link>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {data.collections.data.map((collections) => (
-                      <Link
-                        to={`/productCategory/${collections.id}`}
-                        class="dropdown-item"
-                        key={collections.id}
-                      >
-                        {collections.attributes.categoryName}
-                      </Link>
-                    ))}
-                  </div>
-                </li> */}
                 <li class="nav-item">
                   <Link to="/blog" class="nav-link">
                     Blog
@@ -146,9 +126,19 @@ function NavBar() {
                 </li>
 
                 <li class="nav-item">
-                  <Link to="/cart" class="nav-link">
-                    <i className="fa fa-shopping-cart" />
+                  <Link
+                    to="/cart"
+                    class="nav-link position-relative"
+                  >
+                    <i className="fa fa-shopping-cart" />{" "}
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      {totalItems}
+                      <span class="visually-hidden">
+                        unchecked cart products
+                      </span>
+                    </span>
                   </Link>
+
                 </li>
               </div>
             </ul>
