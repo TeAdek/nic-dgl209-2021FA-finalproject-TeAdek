@@ -23,6 +23,7 @@ export default function LocationDetails() {
     locationDescription,
     locationImage,
     locationName,
+    mapURL,
     openFor,
     phoneNumber,
   } = data.location.data.attributes;
@@ -45,11 +46,11 @@ export default function LocationDetails() {
         <p>{phoneNumber}</p>
         <div style={{width: "300px"}}><hr className="border-line"/></div>
         <p>{openFor}</p>
-        <img
+       <a href={mapURL}><img
         className="location-map"
           src={`${BACKEND_URL + locationImage.data[0].attributes.url}`}
           alt={locationName}
-        />
+        /></a> 
         <p className="location-text">{locationDescription}</p></div>
         
       </div>

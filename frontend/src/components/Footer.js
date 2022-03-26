@@ -17,24 +17,21 @@ export default function Footer() {
         <img src="/images/logo.png.webp" alt="" />
       <div>
         <h2>Store</h2>
-        <p>Our Story</p>
-        <p>Contact Us</p>
-        <p>terms and conditions</p> 
-        <p>privacy policy</p>
-        <p>shipping </p>
-        <p> faq</p>
-        <p>careers</p>
+        <Link to="/our-story" className="footer-link"><p>Our Story</p></Link>
+        <p className="footer-link">Contact Us</p>
+        <p className="footer-link">Terms and Conditions</p> 
+        <p className="footer-link">Privacy Policy</p>
+        <p className="footer-link">Shipping </p>
+        <p className="footer-link"> Faq</p>
+        <p className="footer-link">Careers</p>
       </div>
       <div>
         <h2>Store Location</h2>
         {data.locations.data.map(({id, attributes}) => (
-            <Link to={`/store-location/${id}`} key={id}>
+            <Link className="footer-link" to={`/store-location/${id}`} key={id}>
                 <p>{attributes.locationName}</p>
             </Link>
         ))}
-      </div>
-      <div>
-        <h2>NewsLetter</h2>
       </div>
       <div>
         <h2>Follow Us</h2>

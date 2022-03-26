@@ -42,6 +42,7 @@ a {
   text-decoration: none;
 }
 
+
 /*Home Page Slideshow*/
 .each-fade{
   position: relative;
@@ -61,10 +62,10 @@ a {
 .featured{
  padding-top: 0;
 }
+
 .page-screen {
   width: 80%;
   margin: auto;
-  
 }
 
 .row {
@@ -366,6 +367,7 @@ min-height: 100px;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /***************Login*******************************/
@@ -404,7 +406,7 @@ input{
 /***************Footer*******************************/
 
 .footer{
-  padding-top: 10px;
+  padding: 30px 100px;
   background-color: #1985A1;
 }
 
@@ -418,6 +420,15 @@ input{
 }
 .footer h2{
   font-size: 20px;
+}
+
+.footer-link {
+  color: #fff;
+  transition: color .6s ease-out;
+}
+
+.footer-link:hover {
+  color: blue;
 }
 
 .footer p{
@@ -434,6 +445,10 @@ input{
 .location{
   margin: auto;
   width: 80%;
+}
+
+.location-margin{
+  margin-bottom: 20px;
 }
 
 .location-detail{
@@ -475,3 +490,4 @@ hr.border-line{
 .location-map{
   background-color: azure;
 }
+

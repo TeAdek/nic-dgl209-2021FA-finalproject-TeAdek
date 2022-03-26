@@ -40,6 +40,10 @@
     "phoneNumber": {
       "type": "biginteger",
       "required": true
+    },
+    "mapURL": {
+      "type": "string",
+      "required": false
     }
   }
 }

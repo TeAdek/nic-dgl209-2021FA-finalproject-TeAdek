@@ -21,6 +21,7 @@ const pageData = useQuery(GET_PAGEINTRODUCTIONS, {variables:{
 
   return (
     <div className='location'>
+      <div className='location-margin'>
       <h1>{pageData.data.post.data.attributes.pageName}</h1>
       <p>{pageData.data.post.data.attributes.pages}</p>
       <div className='location-item'>{locationdata.data.locations.data.map(({id, attributes}, index)=> {
@@ -32,7 +33,7 @@ locationImage={attributes.locationImage.data[1].attributes.url}
 locationName={attributes.locationName}
  openFor={attributes.openFor}/>
  
-    })}</div>
+    })}</div></div>
       </div>
   )
 }

@@ -160,6 +160,7 @@ query Location($locationId: ID) {
         locationName
         address
         openFor
+        mapURL
         locationDescription
         phoneNumber
         locationImage {
