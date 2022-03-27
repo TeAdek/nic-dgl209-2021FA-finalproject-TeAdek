@@ -124,7 +124,7 @@ function HomePage() {
                           onClick={() => {
                             addItem({
                               id: id,
-                              name: attributes.productName,
+                              productName: attributes.productName,
                               price: attributes.price,
                               img:
                                 BACKEND_URL +
