@@ -20,6 +20,7 @@ function NavBar() {
   const { totalItems } = useCart();
 
   console.log(totalItems);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   if (data) console.log(data);
@@ -118,11 +119,6 @@ function NavBar() {
                       </Link>
                     </>
                   )}
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i className="fa fa-search" />
-                  </a>
                 </li>
 
                 <li class="nav-item">

@@ -16,7 +16,7 @@ export default function Footer() {
     <div className="flex">
         <img src="/images/logo.png.webp" alt="" />
       <div>
-        <h2>Store</h2>
+        <h2 className="first-type">Store</h2>
         <Link to="/our-story" className="footer-link"><p>Our Story</p></Link>
         <p className="footer-link">Contact Us</p>
         <p className="footer-link">Terms and Conditions</p> 

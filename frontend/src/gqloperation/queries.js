@@ -250,3 +250,25 @@ export const GET_SLIDESHOWS = gql `query Slideshows {
     }
   }
 }`
+
+export const GET_BLOGPOSTS = gql `query Blog {
+  blogs {
+    data {
+      id
+      attributes {
+        title
+        post
+        date
+        summary
+        images {
+          data {
+            id
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}`

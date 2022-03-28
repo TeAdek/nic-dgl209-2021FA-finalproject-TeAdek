@@ -44,7 +44,8 @@ function App() {
     <Route path="/store-location/:id" element={<LocationDetails />} />
     <Route path="/cart" element={<Cart />} />
     </Routes>
-   <Footer/></ApolloProvider>
+   <Footer/>
+   </ApolloProvider>
   </BrowserRouter> 
   </CartProvider>
   );

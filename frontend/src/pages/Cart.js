@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 import Checkout from "../components/Checkout";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export default function Cart() {
     </div>)
   }
 
-  if (isEmpty) return <h1>Your cart is empty</h1>;
+  if (isEmpty) return <div className="cart-empty"> <h1>Your cart is empty</h1> <img src="../images/istockphoto-1044916292-170667a.jpeg" alt="girl gesturing don't know"></img></div>;
   if (items) console.log(items);
 
   return (
