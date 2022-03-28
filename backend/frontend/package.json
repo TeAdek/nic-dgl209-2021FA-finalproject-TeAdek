@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://github.com/TeAdek/nic-dgl209-2021FA-finalproject-TeAdek.git",
+  "homepage": "https://TeAdek.github.io/nic-dgl209-2021FA-finalproject-TeAdek",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.9",
