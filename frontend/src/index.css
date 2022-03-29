@@ -622,7 +622,7 @@ hr.border-line{
   
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 1020px) {
 .shopping-cart{
   display: flex;
   flex-direction: row;
